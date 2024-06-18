@@ -40,7 +40,7 @@
                     </form>
                 </td>
                 <td>
-                    <a href="{{ route('update.bien', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
+                    <a href="{{ route('show.bien', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
                 </td>
             </tr>
             @endforeach
