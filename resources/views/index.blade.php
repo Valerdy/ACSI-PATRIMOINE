@@ -11,10 +11,14 @@
     <style>
         /* Styles personnalisés pour le header */
         .header {
-            background-color: #343a40; /* Couleur de fond du header */
+            background-color: #164507; /* Couleur de fond du header */
             color: #ffffff; /* Couleur du texte */
             padding: 10px 0; /* Espacement intérieur */
             text-align: center; /* Centrage du contenu */
+        }
+
+        .footer{
+            background-color: #164507;
         }
     </style>
 </head>
@@ -54,7 +58,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
+    <footer class="footer mt-auto py-3 text-white text-center">
         <div class="container">
             <span>&copy; 2024 Mon Site Web. Tous droits réservés.</span>
         </div>
