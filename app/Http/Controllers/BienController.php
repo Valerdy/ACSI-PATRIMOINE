@@ -9,8 +9,14 @@ class BienController extends Controller
 {
     public function index()
     {
-        $biens = Bien::all();
-        return response()->json($biens);
+        // $biens = Bien::all();
+        return view('bien.index');
+    }
+
+    public function create()
+    {
+        // $biens = Bien::all();
+        return view('bien.create');
     }
 
     public function store(Request $request)
