@@ -46,7 +46,7 @@
 
         <!-- Bouton de soumission -->
         <button type="submit" class="btn btn-primary">Modifier</button>
-      
+      tewt
         
     </form>
     <form action="{{ route('delete.bien', $bien->id) }}" method="delete">
