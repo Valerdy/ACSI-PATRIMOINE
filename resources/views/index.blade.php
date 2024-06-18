@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemple de Header avec Navbar</title>
+    <title>Gestion du patrimoine de l'ACSI</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images.png') }}" type="image/x-icon">
     <!-- Styles CSS personnalisés -->
     <style>
         /* Styles personnalisés pour le header */
@@ -58,10 +59,5 @@
             <span>&copy; 2024 Mon Site Web. Tous droits réservés.</span>
         </div>
     </footer>
-
-    <!-- Bootstrap JS et dépendances -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
