@@ -42,7 +42,7 @@
                     <a class="nav-link" href="/">Gesion des biens</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gesion des founisseurs</a>
+                    <a class="nav-link" href="{{ route('index_fournisseurs') }}">Gesion des founisseurs</a>
                 </li>
             </ul>
         </div>
