@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <h2>Liste des Patrimoines d'Acquisition</h2>
         <form action="{{ route('creer.bien') }}" method="get">
-            <button class="btn btn-outline-dark mb-2">Nouveau</button>    
+            <button class="btn btn-outline-dark mb-2">Nouveau</button>
         </form>
         <table id="dataTable" class="table table-striped">
             <thead>
@@ -30,9 +30,9 @@
                 <td>{{ $item->categorie }}</td>
                 <td>{{ $item->prix }}</td>
                 <td>{{ $item->created_at }}</td>
-                <td>{{$item->description}}</td>
+                    <td>{{$item->description}}</td>
             </tr>
-            @endforeach   
+            @endforeach
                 <!-- Ajoutez plus de lignes selon vos données -->
             </tbody>
         </table>
