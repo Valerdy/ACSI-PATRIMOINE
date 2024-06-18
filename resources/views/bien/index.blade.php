@@ -19,22 +19,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Maison de campagne</td>
-                    <td>Immobilier</td>
-                    <td>500000</td>
-                    <td>2023-01-15</td>
-                    <td>Une belle maison située au bord d'un lac.</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Actions XYZ</td>
-                    <td>Financier</td>
-                    <td>10000</td>
-                    <td>2022-05-20</td>
-                    <td>Investissement dans des actions de la société XYZ.</td>
-                </tr>
+            @foreach ($biens as $item)
+            <tr>
+                <td>
+                    <form action="{{ route('show.bien',$item->id) }}" method="get">
+                        <button>Voir</button>
+                    </form>
+                </td>
+                <td>{{ $item->nom }}</td>
+                <td>{{ $item->categorie }}</td>
+                <td>{{ $item->prix }}</td>
+                <td>{{ $item->created_at }}</td>
+                <td>{{$item->description}}</td>
+            </tr>
+            @endforeach   
                 <!-- Ajoutez plus de lignes selon vos données -->
             </tbody>
         </table>

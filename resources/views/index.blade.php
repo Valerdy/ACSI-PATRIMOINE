@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gesion des biens</a>
+                    <a class="nav-link" href="/">Gesion des biens</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Gesion des founisseurs</a>
@@ -53,7 +53,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-white text-center fixed-bottom">
+    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
         <div class="container">
             <span>&copy; 2024 Mon Site Web. Tous droits réservés.</span>
         </div>

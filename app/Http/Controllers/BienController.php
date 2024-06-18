@@ -9,8 +9,8 @@ class BienController extends Controller
 {
     public function index()
     {
-        // $biens = Bien::all();
-        return view('bien.index');
+        $biens = Bien::all();
+        return view('bien.index', compact('biens'));
     }
 
     public function create()
@@ -22,7 +22,7 @@ class BienController extends Controller
     public function store(Request $request)
     {
         $bien = Bien::create($request->all());
-        return response()->json($bien, 201);
+        return redirect(route('index'));
     }
 
     public function show($id)
@@ -31,7 +31,7 @@ class BienController extends Controller
         if (!$bien) {
             return response()->json(['message' => 'Bien not found'], 404);
         }
-        return response()->json($bien);
+        return view('bien.show', compact('bien'));
     }
 
     public function update(Request $request, $id)
@@ -44,14 +44,14 @@ class BienController extends Controller
         return response()->json($bien);
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $bien = Bien::find($id);
         if (!$bien) {
             return response()->json(['message' => 'Bien not found'], 404);
         }
         $bien->delete();
-        return response()->json(['message' => 'Bien deleted']);
+        return redirect(route('index'));
     }
 }
 
