@@ -21,6 +21,11 @@ class Fournisseur extends Model
         return $this->hasMany(Commande::class);
     }
 
+    public function entres()
+    {
+        return $this->hasMany(Entre::class);
+    }
+
     public function relations()
     {
         return $this->hasMany(RelationFournisseur::class);

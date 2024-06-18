@@ -3,39 +3,39 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h2>Liste des Patrimoines d'Acquisition</h2>
-        <form action="{{ route('creer.bien') }}" method="get">
+        <h2>Liste des Approvisionnements</h2>
+        <form action="{{ route('creer.entre') }}" method="get">
             <button class="btn btn-outline-dark mb-2">Nouveau</button>
         </form>
         <table id="dataTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Valeur</th>
-                    <th scope="col">Date d'acquisition</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Article</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix total</th>
+                    <th scope="col">Fournisseur</th>
+                    <th scope="col">Date livraison</th>
                     <th scope="col">Suppression</th>
                     <th scope="col">Modification</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach ($biens as $item)
+            @foreach ($entres as $item)
             <tr>
-                <td>{{ $item->nom }}</td>
-                <td>{{ $item->categorie }}</td>
-                <td>{{ $item->prix }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td>{{$item->description}}</td>
+                <td>{{ $item->bien->nom }}</td>
+                <td>{{ $item->quantite }}</td>
+                <td>{{ $item->prix_total." FCFA" }}</td>
+                <td>{{ $item->fournisseur->nom }}</td>
+                <td>{{ $item->date_acquisition }}</td>
                 <td>
-                    <form action="{{ route('delete.bien',$item->id) }}" method="post">
+                    <form action="{{ route('delete.entre',$item->id) }}" method="post">
                         @csrf
                         @method('delete')
                         <button onclick="return confirm('Voulez-vous confirmer l'action)" class="btn btn-outline-danger mb-2">Supprimer</button>
                     </form>
                 </td>
                 <td>
-                    <a href="{{ route('show.bien', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
+                    <a href="{{ route('show.entre', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
                 </td>
             </tr>
             @endforeach

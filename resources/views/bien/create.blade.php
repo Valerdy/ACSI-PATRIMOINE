@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-8 offset-md-2">
-    
+
     <h2 class="mb-4">Création de Patrimoine d'Acquisition</h2>
     <form action="{{route('store.bien')}}" method="POST">
         @csrf
@@ -17,7 +17,7 @@
             <label for="type">Type de patrimoine :</label>
             <select class="form-control" id="type" name="categorie" required>
                 <option value="">Sélectionnez le type de patrimoine</option>
-                <option value="immobilier">Immobilier</option>
+                <option value="Machine">Machine</option>
                 <option value="financier">Financier</option>
                 <option value="artistique">Artistique</option>
                 <option value="culturel">Culturel</option>
@@ -27,8 +27,8 @@
 
         <!-- Valeur du patrimoine -->
         <div class="form-group">
-            <label for="valeur">Valeur du patrimoine :</label>
-            <input type="number" class="form-control" id="valeur" name="prix" required>
+            <label for="valeur">Quantité en stock :</label>
+            <input type="number" class="form-control" id="valeur" name="quantite_stock">
         </div>
 
         <!-- Date d'acquisition -->

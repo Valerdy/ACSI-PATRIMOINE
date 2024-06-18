@@ -47,7 +47,7 @@ class BienController extends Controller
     public function delete($id)
     {
         $bien = Bien::find($id);
-        
+
         if (!$bien) {
             return response()->json(['message' => 'Bien not found'], 404);
         }

@@ -44,6 +44,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('voir_fournisseurs') }}">Gesion des founisseurs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('entres') }}">Gestion des approvisionnements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('historiques') }}">Historiques</a>
+                </li>
             </ul>
         </div>
     </nav>

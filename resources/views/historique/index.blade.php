@@ -3,40 +3,32 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h2>Liste des Patrimoines d'Acquisition</h2>
-        <form action="{{ route('creer.bien') }}" method="get">
-            <button class="btn btn-outline-dark mb-2">Nouveau</button>
-        </form>
+        <div class="col-4">
+            <div class="alert-container">
+                @if(session('success'))
+                    <div class="alert alert-dark mb-3">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+        <h2>Historiques</h2>
         <table id="dataTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Valeur</th>
-                    <th scope="col">Date d'acquisition</th>
+                    <th scope="col">Article</th>
+                    <th scope="col">Action</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Suppression</th>
-                    <th scope="col">Modification</th>
+                    <th hidden>date_creation</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach ($biens as $item)
+            @foreach ($historiques as $item)
             <tr>
-                <td>{{ $item->nom }}</td>
-                <td>{{ $item->categorie }}</td>
-                <td>{{ $item->prix }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td>{{$item->description}}</td>
-                <td>
-                    <form action="{{ route('delete.bien',$item->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button onclick="return confirm('Voulez-vous confirmer l'action)" class="btn btn-outline-danger mb-2">Supprimer</button>
-                    </form>
-                </td>
-                <td>
-                    <a href="{{ route('show.bien', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
-                </td>
+                <td>{{ $item->entre->bien->nom ?? 'Aucune donnée' }}</td>
+                <td>{{ $item->action }}</td>
+                <td>{{ $item->description}}</td>
+                <td hidden>{{ $item->created_at}}</td>
             </tr>
             @endforeach
                 <!-- Ajoutez plus de lignes selon vos données -->
@@ -82,7 +74,7 @@
           },
           "lengthMenu": [5, 10, 50],
           "pagingType": "simple",
-          "order": [[0, 'desc']]
+          "order": [[3, 'desc']]
         });
       });
 </script>

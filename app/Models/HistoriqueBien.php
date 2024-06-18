@@ -10,14 +10,14 @@ class HistoriqueBien extends Model
     use HasFactory;
 
     protected $fillable = [
-        'bien_id',
+        'entre_id',
         'action',
         'description',
     ];
 
-    public function bien()
+    public function entre()
     {
-        return $this->belongsTo(Bien::class);
+        return $this->belongsTo(Entre::class);
     }
 }
 

@@ -9,14 +9,7 @@ class Bien extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nom',
-        'description',
-        'prix',
-        'categorie',
-        'date_acquisition'
-    ];
-
+    protected $guarded=[];
     public function historique()
     {
         return $this->hasMany(HistoriqueBien::class);
@@ -30,6 +23,11 @@ class Bien extends Model
     public function stocks()
     {
         return $this->hasMany(Stock::class);
+    }
+
+    public function entres()
+    {
+        return $this->hasMany(Entre::class);
     }
 }
 
