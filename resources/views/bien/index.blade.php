@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <h2>Liste des Patrimoines d'Acquisition</h2>
         <form action="{{ route('creer.bien') }}" method="get">
-            <button class="btn btn-outline-dark mb-2">Nouveau</button>    
+            <button class="btn btn-outline-dark mb-2">Nouveau</button>
         </form>
         <table id="dataTable" class="table table-striped">
             <thead>
@@ -16,6 +16,7 @@
                     <th scope="col">Valeur</th>
                     <th scope="col">Date d'acquisition</th>
                     <th scope="col">Description</th>
+                    <th>Fonctions</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,8 +32,18 @@
                 <td>{{ $item->prix }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>{{$item->description}}</td>
+                <td>
+                    <form action="{{ route('delete.bien',$item->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button onclick="return confirm('Voulez-vous confirmer l'action)" class="btn btn-outline-danger mb-2">Supprimer</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="{{ route('update.bien', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
+                </td>
             </tr>
-            @endforeach   
+            @endforeach
                 <!-- Ajoutez plus de lignes selon vos données -->
             </tbody>
         </table>
