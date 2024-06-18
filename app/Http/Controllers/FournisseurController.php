@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FournisseurFormRequest;
 use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 
@@ -10,42 +11,44 @@ class FournisseurController extends Controller
     public function index()
     {
         $fournisseurs = Fournisseur::all();
-        return response()->json($fournisseurs);
+        return view('founisseurs.create',[
+            'fournisseurs' => $fournisseurs
+        ]);
     }
 
-    public function store(Request $request)
+    public function create(FournisseurFormRequest $request)
     {
         $fournisseur = Fournisseur::create($request->all());
-        return response()->json($fournisseur, 201);
+        return redirect()->route('voir_fournisseurs')->with('success', 'Fournisseur ajouté');
     }
 
-    public function show($id)
-    {
-        $fournisseur = Fournisseur::find($id);
-        if (!$fournisseur) {
-            return response()->json(['message' => 'Fournisseur not found'], 404);
-        }
-        return response()->json($fournisseur);
+    public function show(){
+
+        $fournisseurs = Fournisseur::all();
+        return view('founisseurs.index',[
+            'fournisseurs' => $fournisseurs
+        ]);
     }
 
-    public function update(Request $request, $id)
-    {
+    public function edit($id){
+
         $fournisseur = Fournisseur::find($id);
-        if (!$fournisseur) {
-            return response()->json(['message' => 'Fournisseur not found'], 404);
-        }
+        return view('founisseurs.show',[
+            'fournisseur' => $fournisseur
+        ]);
+    }
+
+    public function update(FournisseurFormRequest $request, $id){
+
+        $fournisseur=Fournisseur::findOrfail($id);
         $fournisseur->update($request->all());
-        return response()->json($fournisseur);
+        return to_route('voir_fournisseurs')->with('success', 'Fournisseur modifié');
     }
 
-    public function destroy($id)
-    {
-        $fournisseur = Fournisseur::find($id);
-        if (!$fournisseur) {
-            return response()->json(['message' => 'Fournisseur not found'], 404);
-        }
+    public function destroy($id){
+        $fournisseur = Fournisseur::where('id', $id)->firstOrFail();
         $fournisseur->delete();
-        return response()->json(['message' => 'Fournisseur deleted']);
+        return redirect()->back()->with('success', 'Fournisseur retiré');
     }
 }
 

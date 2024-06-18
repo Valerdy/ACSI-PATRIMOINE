@@ -14,6 +14,7 @@ class Bien extends Model
         'description',
         'prix',
         'categorie',
+        'date_acquisition'
     ];
 
     public function historique()
