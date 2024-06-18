@@ -41,12 +41,13 @@ class BienController extends Controller
             return response()->json(['message' => 'Bien not found'], 404);
         }
         $bien->update($request->all());
-        return response()->json($bien);
+        return redirect(route('index'));
     }
 
     public function delete($id)
     {
         $bien = Bien::find($id);
+        
         if (!$bien) {
             return response()->json(['message' => 'Bien not found'], 404);
         }

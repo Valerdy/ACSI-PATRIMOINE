@@ -16,7 +16,7 @@
         <!-- Type de patrimoine -->
         <div class="form-group">
             <label for="type">Type de patrimoine :</label>
-            <select class="form-control" id="type" name="type" required>
+            <select class="form-control" id="type" name="categorie" required>
                 <option value="">{{ $bien->categorie }}</option>
                 <option value="immobilier">Immobilier</option>
                 <option value="financier">Financier</option>
@@ -29,7 +29,7 @@
         <!-- Valeur du patrimoine -->
         <div class="form-group">
             <label for="valeur">Valeur du patrimoine :</label>
-            <input value={{ $bien->prix }} type="number" class="form-control" id="valeur" name="valeur" required>
+            <input value={{ $bien->prix }} type="number" class="form-control" id="valeur" name="prix" required>
         </div>
 
         <!-- Date d'acquisition -->
@@ -46,7 +46,7 @@
 
         <!-- Bouton de soumission -->
         <button type="submit" class="btn btn-primary">Modifier</button>
-      tewt
+      
         
     </form>
     <form action="{{ route('delete.bien', $bien->id) }}" method="delete">
