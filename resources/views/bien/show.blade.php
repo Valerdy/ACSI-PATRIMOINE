@@ -46,12 +46,12 @@
 
         <!-- Bouton de soumission -->
         <button type="submit" class="btn btn-primary">Modifier</button>
-      
-        
+        <form action="{{ route('delete.bien', $bien->id) }}" method="delete">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+
     </form>
-    <form action="{{ route('delete.bien', $bien->id) }}" method="delete">
-        <button type="submit" class="btn btn-danger">Supprimer</button>
-    </form>
+
 </div>
 
 @endsection

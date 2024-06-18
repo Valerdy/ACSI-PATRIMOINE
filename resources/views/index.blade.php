@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemple de Header avec Navbar</title>
+    <title>Gestion du patrimoine de l'ACSI</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images.png') }}" type="image/x-icon">
     <!-- Styles CSS personnalisés -->
     <style>
         /* Styles personnalisés pour le header */
