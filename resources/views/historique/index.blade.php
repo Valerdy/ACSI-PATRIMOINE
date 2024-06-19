@@ -12,25 +12,37 @@
                 @endif
             </div>
         </div>
-        <h2>Historiques</h2>
-        <table id="dataTable" class="table table-striped">
+        <h2>Historiques des biens</h2>
+        <table id="dataTable" class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th scope="col">Article</th>
-                    <th scope="col">Action</th>
                     <th scope="col">Description</th>
-                    <th hidden>date_creation</th>
+                    <th scope="col">Date de creation</th>
+                    <th scope="col">Date de modification</th>
+                    <th scope="col">En stock</th>
+                    <th scope="col">Statut du bien</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach ($historiques as $item)
+                @foreach($biens as $bien)
+                    <tr>
+                        <td>{{ $bien->nom }}</td>
+                        <td>{{ $bien->description }}</td>
+                        <td>{{ $bien->created_at }}</td>
+                        <td>{{ $bien->updated_at }}</td>
+                        <td>{{ $bien->quantite_stock }}</td>
+                        <td>{{ $bien->etat }}</td>
+                    </tr>
+                @endforeach
+            {{--  @foreach ($historiques as $item)
             <tr>
                 <td>{{ $item->entre->bien->nom ?? 'Aucune donnée' }}</td>
                 <td>{{ $item->action }}</td>
                 <td>{{ $item->description}}</td>
                 <td hidden>{{ $item->created_at}}</td>
             </tr>
-            @endforeach
+            @endforeach  --}}
                 <!-- Ajoutez plus de lignes selon vos données -->
             </tbody>
         </table>

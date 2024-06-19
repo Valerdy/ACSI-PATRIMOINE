@@ -51,6 +51,7 @@ class BienController extends Controller
         if (!$bien) {
             return response()->json(['message' => 'Bien not found'], 404);
         }
+        $bien->etat = 'supprimé';
         $bien->delete();
         return redirect(route('index'));
     }

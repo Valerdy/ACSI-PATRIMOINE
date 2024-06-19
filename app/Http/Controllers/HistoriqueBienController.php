@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bien;
 use App\Models\Entre;
 use App\Models\HistoriqueBien;
 use Illuminate\Http\Request;
 
 class HistoriqueBienController extends Controller
 {
-    public function index()
-    {
-        $historiques = HistoriqueBien::with(['entre.bien.nom'])->get();
-        return response()->json($historiques);
-        return view('historique.index', compact('historiques'));
+    // public function index()
+    // {
+    //     $historiques = HistoriqueBien::with(['entre.bien.nom'])->get();
+    //     return response()->json($historiques);
+    //     return view('historique.index', compact('historiques'));
+    // }
+
+    public function index(){
+
+        $biens = Bien::withTrashed()->get();
+
+        return view('historique.index', [
+            'biens' => $biens
+        ]);
     }
 
     public function store(Request $request)

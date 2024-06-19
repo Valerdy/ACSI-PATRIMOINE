@@ -16,7 +16,7 @@
         <form action="{{ route('index_fournisseurs') }}" method="get">
             <button class="btn btn-outline-dark mb-2">Nouveau</button>
         </form>
-        <table id="dataTable" class="table table-striped">
+        <table id="dataTable" class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th scope="col">Nom</th>
