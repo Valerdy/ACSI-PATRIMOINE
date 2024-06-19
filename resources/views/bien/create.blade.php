@@ -18,6 +18,7 @@
             <select class="form-control" id="type" name="categorie" required>
                 <option value="">Sélectionnez le type de patrimoine</option>
                 <option value="Machine">Machine</option>
+                <option value="Immobilier">Immobilier</option>
                 <option value="financier">Financier</option>
                 <option value="artistique">Artistique</option>
                 <option value="culturel">Culturel</option>
@@ -27,7 +28,7 @@
 
         <!-- Valeur du patrimoine -->
         <div class="form-group">
-            <label for="valeur">Quantité en stock :</label>
+            <label for="valeur">Quantité :</label>
             <input type="number" class="form-control" id="valeur" name="quantite_stock">
         </div>
 

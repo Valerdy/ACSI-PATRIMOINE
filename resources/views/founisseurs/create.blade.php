@@ -31,13 +31,13 @@
         <!-- Telephone du fournisseur -->
         <div class="form-group">
             <label for="telephone">Telephone :</label>
-            <input type="text" class="form-control" id="telephone" name="telephone" required>
+            <input maxlength="15" type="number" class="form-control" id="telephone" name="telephone" required>
         </div>
 
         <!-- Email du fournisseur -->
         <div class="form-group">
             <label for="email">Email :</label>
-            <input type="text" class="form-control" id="email" name="email" required>
+            <input  type="text" class="form-control" id="email" name="email" required>
         </div>
 
         <!-- Bouton de soumission -->

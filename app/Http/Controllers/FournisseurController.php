@@ -17,10 +17,22 @@ class FournisseurController extends Controller
     }
 
     public function create(FournisseurFormRequest $request)
-    {
-        $fournisseur = Fournisseur::create($request->all());
-        return redirect()->route('voir_fournisseurs')->with('success', 'Fournisseur ajouté');
+{
+    // Vérifier si le fournisseur existe déjà par son adresse e-mail
+    $existingFournisseur = Fournisseur::where('email', $request->input('email'))->first();
+    $existingFournisseur = Fournisseur::where('telephone', $request->input('telephone'))->first();
+
+    if ($existingFournisseur) {
+        // Rediriger avec un message d'erreur si le fournisseur existe déjà
+        return redirect()->route('voir_fournisseurs')->with('error', 'Fournisseur existe déjà');
     }
+
+    // Créer un nouveau fournisseur s'il n'existe pas encore
+    $fournisseur = Fournisseur::create($request->all());
+
+    return redirect()->route('voir_fournisseurs')->with('success', 'Fournisseur ajouté');
+}
+
 
     public function show(){
 

@@ -4,9 +4,9 @@
 <div class="col-md-8 offset-md-2">
 
     <h2 class="mb-4">Création de Patrimoine d'Acquisition</h2>
-    <form action="{{route('update.bien', $bien->id)}}" method="put">
+    <form action="{{route('update.bien', $bien->id)}}" method="POST">
         @csrf
-        <input hidden value={{ $bien->id }} type="number" class="form-control" id="valeur" name="valeur" required>
+        @method('put')
         <!-- Nom du patrimoine -->
         <div class="form-group">
             <label for="nom">Nom du patrimoine :</label>
@@ -24,12 +24,6 @@
                 <option value="culturel">Culturel</option>
                 <!-- Ajoutez d'autres options selon vos besoins -->
             </select>
-        </div>
-
-        <!-- Valeur du patrimoine -->
-        <div class="form-group">
-            <label for="valeur">Valeur du patrimoine :</label>
-            <input value={{ $bien->prix }} type="number" class="form-control" id="valeur" name="prix" required>
         </div>
 
         <!-- Date d'acquisition -->

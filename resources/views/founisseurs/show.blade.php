@@ -4,7 +4,7 @@
 @section('content')
 <div class="col-md-8 offset-md-2">
 
-    <h2 class="mb-4">Insertion des fournisseurs</h2>
+    <h2 class="mb-4">Modification fournisseur</h2>
     <form action="" method="POST">
         @csrf
         @method('put')
