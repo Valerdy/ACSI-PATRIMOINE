@@ -78,7 +78,7 @@
               "sSortDescending": ": activer pour trier la colonne par ordre décroissant"
             }
           },
-          "lengthMenu": [5, 10, 50],
+          "lengthMenu": [5, 10, 20, 50],
           "pagingType": "simple",
           "order": [[0, 'desc']]
         });
