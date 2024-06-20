@@ -18,6 +18,7 @@
             <select class="form-control" id="type" name="categorie" required>
                 <option value="">Sélectionnez le type de patrimoine</option>
                 <option value="Machine">Machine</option>
+                <option value="Fourniture">Fourniture</option>
                 <option value="Immobilier">Immobilier</option>
                 <option value="financier">Financier</option>
                 <option value="artistique">Artistique</option>
