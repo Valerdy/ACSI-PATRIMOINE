@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/', function () {
+    return view('auth.register');
+});
+
 Route::get('/inscription', function () {
     return view('auth.register');
 });
