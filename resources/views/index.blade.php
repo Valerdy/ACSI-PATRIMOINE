@@ -27,7 +27,7 @@
     <header class="header">
         <div class="container">
             <h1>GESTION DU PATRIMOINE ACSI</h1>
-            <p>Soyez le bienvenu</p>
+            <p>Soyez le bienvenue</p>
         </div>
     </header>
 
@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Gesion des biens</a>
+                    <a class="nav-link" href="{{ route('index') }}">Gesion des biens</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('voir_fournisseurs') }}">Gesion des founisseurs</a>
@@ -48,8 +48,21 @@
                     <a class="nav-link" href="{{ route('entres') }}">Gestion des approvisionnements</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('historiques') }}">Historiques</a>
+                    <a class="nav-link" href="{{ route('historiques') }}">Suivi et Sauvegarde</a>
                 </li>
+                @auth()
+                <li class="nav-item">
+                    <a class="nav-link" href="/inscription">Creation d'un compte</a>
+                </li>
+                <li class="nav-item">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit">Deconnexion</button>
+                </form>
+                </li>
+                    @else
+
+                @endauth
             </ul>
         </div>
     </nav>
@@ -64,9 +77,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 text-white text-center">
+    <footer class="footer mt-auto py-2 text-white text-center">
         <div class="container">
-            <span>&copy; 2024 Mon Site Web. Tous droits réservés.</span>
+            <span>&copy; 2024 CSI. Tous droits réservés.</span>
         </div>
     </footer>
 </body>

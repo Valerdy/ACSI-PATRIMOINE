@@ -33,8 +33,11 @@ class EntreController extends Controller
             'date_acquisition'=> $request->date_acquisition,
         ]);
         $bien->save();
+
         $stock_bien = Bien::where('id',$request->bien_id)->firstOrFail();
-        $stock_bien->quantite_stock = $stock_bien->quantite_stock + $request->quantite;
+        $qte=($stock_bien->quantite_stock + $request->quantite);
+        //dd($qte);
+        $stock_bien->quantite_stock = $qte;
         $stock_bien->save();
 
         $get_fournisseur = Entre::where('id',$bien->id)->with(['fournisseur'])->firstOrFail();
