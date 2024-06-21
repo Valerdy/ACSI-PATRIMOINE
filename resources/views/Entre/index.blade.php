@@ -43,7 +43,7 @@
                 <tr>
                     <td>{{ $item->bien ? $item->bien->nom : 'Aucun bien associé' }}</td>
                     <td>{{ $item->quantite }}</td>
-                    <td>{{ $item->prix_total * $item->quantite." FCFA" }}</td>
+                    <td>{{ $item->prix_total." FCFA" }}</td>
                     <td>{{ $item->fournisseur ? $item->fournisseur->nom : 'Aucun fournisseur associé' }}</td>
                     <td>{{ $item->date_acquisition }}</td>
                     <td>

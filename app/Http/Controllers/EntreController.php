@@ -29,7 +29,7 @@ class EntreController extends Controller
             'bien_id'=> $request->bien_id,
             'fournisseur_id'=> $request->fournisseur_id,
             'quantite'=> $request->quantite,
-            'prix_total'=> $request->prix_total,
+            'prix_total'=> $request->prix_total * $request->quantite,
             'date_acquisition'=> $request->date_acquisition,
         ]);
         $bien->save();

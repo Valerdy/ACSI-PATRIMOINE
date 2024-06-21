@@ -14,6 +14,7 @@
                     <th scope="col">Type</th>
                     <th scope="col">Date d'acquisition</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Quantité en stock</th>
                     <th scope="col">Suppression</th>
                     <th scope="col">Modification</th>
                 </tr>
@@ -24,6 +25,8 @@
                 <td>{{ $item->nom }}</td>
                 <td>{{ $item->categorie }}</td>
                 <td>{{ $item->date_acquisition }}</td>
+                <td>{{ $item->description }}</td>
+                <td>{{ $item->quantite_stock }}</td>
                 <td>{{$item->description}}</td>
                 <td>
                     <form action="{{ route('delete.bien',$item->id) }}" method="post">
