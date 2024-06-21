@@ -26,6 +26,12 @@
             </select>
         </div>
 
+        <!-- Valeur du patrimoine -->
+        <div class="form-group">
+            <label for="valeur">Quantité :</label>
+            <input type="number" class="form-control" id="valeur" name="quantite_stock">
+        </div>
+
         <!-- Date d'acquisition -->
         <div class="form-group">
             <label for="date_acquisition">Date d'acquisition :</label>

@@ -27,7 +27,7 @@
     <header class="header">
         <div class="container">
             <h1>GESTION DU PATRIMOINE ACSI</h1>
-            <p>Soyez le bienvenue</p>
+
         </div>
     </header>
 
