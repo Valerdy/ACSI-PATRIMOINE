@@ -54,10 +54,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/inscription">Creation d'un compte</a>
                 </li>
-                <li class="nav-item">
+                <li class="mx-5 nav-item">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit">Deconnexion</button>
+                    <button style="background-color: darkred" class=" mx-3 btn btn-outline-dark text-white" type="submit">Deconnexion</button>
                 </form>
                 </li>
                     @else

@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach ($entres as $item)
+            {{--  @foreach ($entres as $item)
             <tr>
                 <td>{{ $item->bien->nom }}</td>
                 <td>{{ $item->quantite }}</td>
@@ -38,7 +38,27 @@
                     <a href="{{ route('show.entre', $item->id) }}"><button class=" btn btn-outline-info">Modifier</button></a>
                 </td>
             </tr>
+            @endforeach  --}}
+            @foreach ($entres as $item)
+                <tr>
+                    <td>{{ $item->bien ? $item->bien->nom : 'Aucun bien associé' }}</td>
+                    <td>{{ $item->quantite }}</td>
+                    <td>{{ $item->prix_total." FCFA" }}</td>
+                    <td>{{ $item->fournisseur ? $item->fournisseur->nom : 'Aucun fournisseur associé' }}</td>
+                    <td>{{ $item->date_acquisition }}</td>
+                    <td>
+                        <form action="{{ route('delete.entre', $item->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button onclick="return confirm('Voulez-vous confirmer l\'action?')" class="btn btn-outline-danger mb-2">Supprimer</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="{{ route('show.entre', $item->id) }}"><button class="btn btn-outline-info">Modifier</button></a>
+                    </td>
+                </tr>
             @endforeach
+
                 <!-- Ajoutez plus de lignes selon vos données -->
             </tbody>
         </table>
