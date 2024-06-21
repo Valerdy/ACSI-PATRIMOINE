@@ -52,7 +52,7 @@
                 </li>
                 @auth()
                 <li class="nav-item">
-                    <a class="nav-link" href="/inscription">Creation d'un compte</a>
+                    <a style="background-color: rgb(79, 218, 15)" class="nav-link mx-3 btn btn-outline-dark text-white" href="/inscription">Creation d'un compte</a>
                 </li>
                 <li class="mx-5 nav-item">
                 <form method="POST" action="{{ route('logout') }}">
