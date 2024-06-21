@@ -18,7 +18,6 @@
                 <tr>
                     <th scope="col">Article</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Fournisseurs</th>
                     <th scope="col">Date de creation</th>
                     <th scope="col">Date de modification</th>
                     <th scope="col">En stock</th>
