@@ -17,23 +17,22 @@
             <thead>
                 <tr>
                     <th scope="col">Article</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Fournisseurs</th>
                     <th scope="col">Date de creation</th>
                     <th scope="col">Date de modification</th>
                     <th scope="col">En stock</th>
-                    <th scope="col">Statut du bien</th>
+                    {{--  <th scope="col">Statut du bien</th>  --}}
                 </tr>
             </thead>
             <tbody>
-                @foreach($biens as $bien)
+                @foreach($entres as $entre)
                     <tr>
-                        <td>{{ $bien->nom }}</td>
-                        <td>{{ $bien->description }}</td>
-                        <td>{{ $bien->created_at }}</td>
-                        <td>{{ $bien->updated_at }}</td>
-                        <td>{{ $bien->quantite_stock }}</td>
-                        <td>{{ $bien->etat }}</td>
+                        <td>{{ $entre->bien_id }}</td>
+                        <td>{{ $entre->fournisseur_id }}</td>
+                        <td>{{ $entre->created_at }}</td>
+                        <td>{{ $entre->updated_at }}</td>
+                        <td>{{ $entre->quantite }}</td>
+                        {{--  <td>{{ $entre->etat }}</td>  --}}
                     </tr>
                 @endforeach
             {{--  @foreach ($historiques as $item)

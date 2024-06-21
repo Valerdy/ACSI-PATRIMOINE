@@ -18,10 +18,10 @@ class HistoriqueBienController extends Controller
 
     public function index(){
 
-        $biens = Bien::withTrashed()->get();
-
+        // $entres = Entre::withTrashed()->get();
+        $entres = Entre::all();
         return view('historique.index', [
-            'biens' => $biens
+            'entres' => $entres
         ]);
     }
 
