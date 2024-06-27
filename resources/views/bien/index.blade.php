@@ -12,7 +12,6 @@
                 <tr>
                     <th scope="col">Nom</th>
                     <th scope="col">Type</th>
-                    <th scope="col">Quantité</th>
                     <th scope="col">Date d'acquisition</th>
                     <th scope="col">Description</th>
                     <th scope="col">Quantité en stock</th>
@@ -25,7 +24,6 @@
             <tr>
                 <td>{{ $item->nom }}</td>
                 <td>{{ $item->categorie }}</td>
-                <td>{{ $item->quantite_stock }}</td>
                 <td>{{ $item->date_acquisition }}</td>
                 <td>{{ $item->description }}</td>
                 <td>{{ $item->quantite_stock }}</td>
